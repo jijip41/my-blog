@@ -45,6 +45,9 @@ export default function RootLayout({
           </ul>
         </nav>
         {children}
+        <footer>
+          <p>&copy; 2025 Jihye Pak</p>
+        </footer>
       </body>
     </html>
   );
