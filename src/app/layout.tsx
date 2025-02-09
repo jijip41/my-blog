@@ -26,11 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen p-8`}
       >
-        <nav>
-          Jihye Pak
-          <ul>
+        <nav className="flex justify-between">
+          <h1 className="font-bold text-lg">
+            <Link href="/">Jihye's Blog</Link>
+          </h1>
+          <ul className="flex justify-evenly space-x-2 font-semibold">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -46,9 +48,7 @@ export default function RootLayout({
           </ul>
         </nav>
         {children}
-        <footer>
-          <p>&copy; 2025 Jihye Pak</p>
-        </footer>
+        <footer className="text-center mt-auto">&copy; 2025 Jihye Pak</footer>
       </body>
     </html>
   );
