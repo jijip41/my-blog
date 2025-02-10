@@ -1,5 +1,5 @@
 import React from "react";
-import { PostProps } from "../services/getPosts";
+import { PostProps } from "../services/getPostsByFeature";
 import Image from "next/image";
 import Chip from "./Chip";
 import getCategory from "../utils/getCategory";
