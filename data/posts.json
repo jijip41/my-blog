@@ -4,7 +4,7 @@
     "title": "2024 Year in Review",
     "description": "What I did and learned in 2024",
     "date": "2024-12-31",
-    "category": "my story",
+    "category": "review",
     "path": "review-2024",
     "featured": true
   },
@@ -13,7 +13,7 @@
     "title": "2023 Year in Review",
     "description": "What I did and learned in 2023",
     "date": "2023-12-31",
-    "category": "my story",
+    "category": "review",
     "path": "review-2023",
     "featured": true
   },
@@ -22,7 +22,7 @@
     "title": "When to use Link component in Next.js",
     "description": "When to use Link component in Next.js",
     "date": "2025-01-01",
-    "category": "Next",
+    "category": "nextJs",
     "path": "nextjs-link",
     "featured": false
   }
