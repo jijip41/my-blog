@@ -10,6 +10,9 @@ export interface PostProps {
   featured: boolean;
 }
 
-export function getAllPosts(): PostProps[] {
-  return jsonData;
+export function getPostsByFeature(featured: boolean): PostProps[] {
+  if (featured) {
+    return jsonData.filter((post) => post.featured);
+  }
+  return jsonData.filter((post) => !post.featured);
 }
