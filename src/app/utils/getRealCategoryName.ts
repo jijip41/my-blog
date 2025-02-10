@@ -6,6 +6,10 @@ export function getRealCategoryName(name: Category | undefined) {
       return "Review";
     case Category.NextJs:
       return "Next.js";
+    case Category.React:
+      return "React";
+    case Category.TailwindCss:
+      return "Tailwind CSS";
     default:
       return undefined;
   }
