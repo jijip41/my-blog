@@ -1,0 +1,26 @@
+# **2024 Year in Review**
+
+## **What Did I Do?**
+
+I developed an internal UI tool to track and connect assets, enhancing user experience and productivity.
+
+### **Key Contributions:**
+
+- Built a **React** and **Tailwind CSS**-based UI tool for asset tracking and management.
+- Developed **unit and integration tests** using **Vitest** and **React Testing Library**.
+- Integrated various libraries to optimise performance, maintainability, and user experience.
+
+---
+
+## **Skills & Technologies**
+
+| Technology        | Experience                                                                                                                                                                                                                                             |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **React**         | - Built reusable, maintainable, and readable components. <br> - Optimised performance using `useCallback()` and `useMemo()`. <br> - Utilised `useReducer` for effective state management.                                                              |
+| **Tailwind CSS**  | - Used `tw-merge` and `Tailwind Variants` to create reusable components. <br> - Deep understanding of Tailwind CSS’s core concepts, improving development speed and efficiency.                                                                        |
+| **Mapbox**        | - Migrated from **Leaflet to Mapbox** for better asset visualisation (~3000 locations). <br> - Improved performance for rendering markers and connections, reducing zoom-in/out lag. <br> - Enhanced user experience with smoother interactions.       |
+| **ShadCN**        | - Replaced **MUI** with **ShadCN** for lightweight, customisable components. <br> - Improved flexibility and development speed.                                                                                                                        |
+| **Feature Flags** | - Implemented feature flags for **continuous delivery** and **fast feedback loops**. <br> - Delivered incremental updates, demoed frequently, and iterated based on user feedback. <br> - Strengthened communication and customer-centric development. |
+| **A/B Testing**   | - Introduced a **toggle button** for users to test the new UI alongside the old version. <br> - Allowed a smooth transition, improving user adoption and confidence. <br> - Reduced UI load time by **1 second**, increasing productivity by **1/3**.  |
+
+---
