@@ -28,25 +28,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen p-8`}
       >
-        <nav className="flex justify-between">
+        <header className="flex justify-between">
           <h1 className="font-bold text-lg">
             <Link href="/">Jihye's Blog</Link>
           </h1>
-          <ul className="flex justify-evenly space-x-2 font-semibold">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/posts">Posts</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
+          <nav>
+            <ul className="flex justify-evenly space-x-2 font-semibold">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/posts">Posts</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
         {children}
         <footer className="text-center mt-auto">&copy; 2025 Jihye Pak</footer>
       </body>
