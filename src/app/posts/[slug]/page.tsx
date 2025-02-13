@@ -5,6 +5,7 @@ import { getPostData } from "@/app/services/getPostData";
 import { getPostsByCategory } from "@/app/services/getPostsByCategory";
 import React from "react";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default async function PostPage({
   params,
@@ -17,10 +18,9 @@ export default async function PostPage({
   if (!post) return <div>hi</div>;
 
   const markdown = await getPostData(post.path);
-
   return (
-    <main>
-      <Markdown>{markdown}</Markdown>
+    <main className="border p-4 flex flex-col space-y-2">
+      <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
       <h1>{post?.title}</h1>
       <p>{post?.description}</p>
     </main>
