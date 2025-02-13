@@ -1,13 +1,13 @@
 import React from "react";
 import { PostProps } from "../services/getPostsByFeature";
 import Image from "next/image";
-import Chip from "./Chip";
 import getCategory from "../utils/getCategory";
+import Chip from "./Chip";
 
 export default function Post({ post }: { post: PostProps }) {
   const { title, description, date, category, path } = post;
   return (
-    <article className="flex flex-col gap-y-2 border-2 shadow-sm rounded-t-md p-4">
+    <article className="flex flex-col gap-y-2 border shadow-sm rounded-t-md p-4">
       <h3 className="font-semibold text-gray-500">{title}</h3>
       <Image
         src={`/images/${path}.png`}
