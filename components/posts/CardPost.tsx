@@ -1,10 +1,10 @@
 import React from "react";
-import { PostProps } from "../services/getPostsByFeature";
+import { PostProps } from "../../src/app/services/getPostsByFeature";
 import Image from "next/image";
-import Chip from "./Chip";
+import Chip from "../Chip";
 import getCategory from "@/lib/category";
 
-export default function Post({ post }: { post: PostProps }) {
+export default function CardPost({ post }: { post: PostProps }) {
   const { title, description, date, category, path } = post;
   return (
     <article className="flex flex-col gap-y-2 border shadow-sm rounded-t-md p-4">

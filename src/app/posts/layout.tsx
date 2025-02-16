@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { CategoryCheckbox } from "../components/CategoryCheckbox";
 import { CategoryProvider } from "../context/categoryContext";
 import { Category } from "@/lib/category";
+import { CategoryCheckbox } from "@/components/posts/CategoryCheckbox";
 
 export default function PostsLayout({
   children,

@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import { CategoryContext } from "../context/categoryContext";
 import { getPostsByCategory } from "../services/getPostsByCategory";
-import Post from "./components/Post";
+import InlinePost from "@/components/posts/InlinePost";
 
 export default function postsPage() {
   const { state } = useContext(CategoryContext);
@@ -13,7 +13,7 @@ export default function postsPage() {
     <div className="flex flex-col gap-y-2">
       Posts
       {posts.map((post) => (
-        <Post key={post.id} post={post} />
+        <InlinePost key={post.id} post={post} />
       ))}
     </div>
   );

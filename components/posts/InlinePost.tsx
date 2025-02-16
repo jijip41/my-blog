@@ -1,11 +1,11 @@
-import Chip from "@/app/components/Chip";
-import { PostProps } from "@/app/services/getPostsByFeature";
-import getCategory from "@/app/utils/getCategory";
+import getCategory from "@/lib/category";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { PostProps } from "../../src/app/services/getPostsByFeature";
+import Chip from "../Chip";
 
-export default function Post({ post }: { post: PostProps }) {
+export default function InlinePost({ post }: { post: PostProps }) {
   const { title, description, date, category, path, id } = post;
 
   return (

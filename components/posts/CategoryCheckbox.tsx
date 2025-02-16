@@ -3,7 +3,7 @@
 import {
   CategoryActionType,
   CategoryContext,
-} from "../context/categoryContext";
+} from "../../src/app/context/categoryContext";
 import { useContext } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Category, getRealCategoryName } from "@/lib/category";
