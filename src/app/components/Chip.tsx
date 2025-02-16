@@ -1,7 +1,6 @@
+import { Category, getRealCategoryName } from "@/lib/category";
 import React from "react";
-import { tv, VariantProps } from "tailwind-variants";
-import { getRealCategoryName } from "../utils/getRealCategoryName";
-import { Category } from "../utils/getCategory";
+import { tv } from "tailwind-variants";
 
 const style = tv({
   base: "rounded-full bg-gray-200 text-gray-800 px-2 py-1 w-fit",
@@ -9,11 +8,11 @@ const style = tv({
     category: {
       review: "bg-yellow-200 text-gray-800",
       nextJs: "bg-blue-200 text-gray-800",
+      react: "",
+      tailwindCss: "",
     },
   },
 });
-
-export type categoryVariants = VariantProps<typeof style>;
 
 export default function Chip({ category }: { category: Category | undefined }) {
   return (

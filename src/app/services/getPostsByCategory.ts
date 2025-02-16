@@ -1,4 +1,4 @@
-import getCategory, { Category } from "../utils/getCategory";
+import getCategory, { Category } from "@/lib/category";
 import jsonData from "../../../data/posts.json";
 
 export function getPostsByCategory(categories: Category[]) {

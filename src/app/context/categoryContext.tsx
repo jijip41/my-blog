@@ -1,5 +1,5 @@
+import { Category } from "@/lib/category";
 import { createContext, PropsWithChildren, useReducer } from "react";
-import { Category } from "../utils/getCategory";
 
 interface CategoryContextInterface {
   state: Category[];

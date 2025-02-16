@@ -1,8 +1,8 @@
 import React from "react";
 import { PostProps } from "../services/getPostsByFeature";
 import Image from "next/image";
-import getCategory from "../utils/getCategory";
 import Chip from "./Chip";
+import getCategory from "@/lib/category";
 
 export default function Post({ post }: { post: PostProps }) {
   const { title, description, date, category, path } = post;

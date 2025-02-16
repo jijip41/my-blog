@@ -1,13 +1,12 @@
 "use client";
 
-import { Checkbox } from "@/components/ui/checkbox";
-import { Category } from "../utils/getCategory";
-import { getRealCategoryName } from "../utils/getRealCategoryName";
 import {
   CategoryActionType,
   CategoryContext,
 } from "../context/categoryContext";
 import { useContext } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Category, getRealCategoryName } from "@/lib/category";
 
 interface Props {
   label: Category;

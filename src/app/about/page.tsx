@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import { getEnvironmentVariable } from "../utils/configUtils";
+
 import Link from "next/link";
+import { getEnvironmentVariable } from "@/lib/configUtils";
 
 export default function aboutPage() {
   return (
