@@ -4,6 +4,7 @@ export enum Category {
   React = "react",
   TailwindCss = "tailwindCss",
 }
+
 export default function getCategory(category: string) {
   switch (category) {
     case "review":
@@ -14,6 +15,21 @@ export default function getCategory(category: string) {
       return Category.React;
     case "tailwindCss":
       return Category.TailwindCss;
+    default:
+      return undefined;
+  }
+}
+
+export function getRealCategoryName(name: Category | undefined) {
+  switch (name) {
+    case Category.Review:
+      return "Review";
+    case Category.NextJs:
+      return "Next.js";
+    case Category.React:
+      return "React";
+    case Category.TailwindCss:
+      return "Tailwind CSS";
     default:
       return undefined;
   }
