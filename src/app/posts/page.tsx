@@ -5,9 +5,9 @@ export default async function postsPage() {
   const posts = await getAllPostData();
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <main className="flex flex-col gap-y-2">
       Posts
       <PostsWithCategory posts={posts} />
-    </div>
+    </main>
   );
 }

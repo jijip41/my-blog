@@ -12,7 +12,7 @@ export default function PostsLayout({
 }>) {
   return (
     <CategoryProvider>
-      <main className="flex space-x-4 p-4">
+      <main className="flex flex-col sm:flex-row p-4 space-y-4 sm:space-x-4">
         <section className="flex-1">{children}</section>
         <section className="flex flex-col space-y-4 flex-0 border rounded-md p-4 shadow-md h-fit">
           <h3 className="text-md font-semibold text-gray-500">Category</h3>
