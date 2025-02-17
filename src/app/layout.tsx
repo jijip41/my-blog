@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jihye's blog",
-  description: "Jihye's journey to be an awesome developer",
+  title: "Jihye&apos;s blog",
+  description: "Jihye&apos;s journey to be an awesome developer",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <header className="flex justify-between">
           <h1 className="font-bold text-lg">
-            <Link href="/">Jihye's Blog</Link>
+            <Link href="/">Jihye&apos;s Blog</Link>
           </h1>
           <nav>
             <ul className="flex justify-evenly space-x-2 font-semibold">

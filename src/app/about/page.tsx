@@ -20,9 +20,9 @@ export default function aboutPage() {
       <section className="flex items-center gap-x-8">
         <div className="text-md font-semibold text-gray-500">
           <p>Hi 👋 </p>
-          <p>I'm a software engineer who loves to build things.</p>
+          <p>I&apos;m a software engineer who loves to build things.</p>
           <p>
-            I'm passionate about learning new technologies and sharing my
+            I&apos;m passionate about learning new technologies and sharing my
             knowledge with others.
           </p>
           <p>I hope I can share my journey with you through this blog.</p>

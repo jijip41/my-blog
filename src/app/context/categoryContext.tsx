@@ -34,12 +34,10 @@ const initialState: Category[] = [];
 
 export const CategoryContext = createContext<CategoryContextInterface>({
   state: initialState,
-  dispatch: (_action: CategoryAction) => {},
+  dispatch: () => {},
 });
 
-interface CategoryProviderProps extends PropsWithChildren {}
-
-export const CategoryProvider = ({ children }: CategoryProviderProps) => {
+export const CategoryProvider = ({ children }: PropsWithChildren) => {
   const [state, dispatch] = useReducer(categoryReducer, initialState);
   return (
     <CategoryContext.Provider

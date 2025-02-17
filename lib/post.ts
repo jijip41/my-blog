@@ -19,7 +19,7 @@ export async function getPostData(fileName: string) {
   return content;
 }
 
-export function getPostById(postId: String) {
+export function getPostById(postId: string) {
   return jsonData.find(({ id }) => postId === id);
 }
 
