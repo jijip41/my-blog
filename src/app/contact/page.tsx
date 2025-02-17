@@ -1,10 +1,9 @@
 "use client";
 
 import Form from "next/form";
-import Link from "next/link";
-import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { sendEmail } from "@/lib/email";
+import SocialMedia from "@/components/SocialMedia";
 
 export interface Form {
   name: string;
@@ -99,11 +98,12 @@ export default function ContactPage() {
               <label className="font-semibold" htmlFor="subject">
                 Subject
               </label>
-              <textarea
+              <input
                 id="subject"
                 name="subject"
                 value={form.subject}
                 required
+                maxLength={80}
                 className="text-black flex-1"
                 onChange={onChange}
               />
@@ -132,41 +132,7 @@ export default function ContactPage() {
         </form>
       </section>
       <section>
-        <ul className="flex justify-center space-x-4">
-          <li>
-            <Link href="https://github.com/jijip41" target="_blank">
-              <Image
-                src="/svgs/github.svg"
-                width={25}
-                height={25}
-                alt="github logo"
-                className="hover:bg-gray-50 rounded-full"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://www.linkedin.com/in/jihyepak" target="_blank">
-              <Image
-                src="/svgs/linkedin.svg"
-                width={25}
-                height={25}
-                alt="linkedin logo"
-                className="hover:bg-gray-50 rounded-full"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://x.com/jihye_pak" target="_blank">
-              <Image
-                src="/svgs/x.svg"
-                width={25}
-                height={25}
-                alt="x logo"
-                className="hover:bg-gray-50 rounded-full"
-              />
-            </Link>
-          </li>
-        </ul>
+        <SocialMedia />
       </section>
     </main>
   );
