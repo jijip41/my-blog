@@ -2,8 +2,8 @@ import getCategory from "@/lib/category";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { PostProps } from "../../src/app/services/getPostsByFeature";
 import Chip from "../Chip";
+import { PostProps } from "@/lib/post";
 
 export default function InlinePost({ post }: { post: PostProps }) {
   const { title, description, date, category, path, id } = post;

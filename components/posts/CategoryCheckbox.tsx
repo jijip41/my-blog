@@ -1,12 +1,12 @@
 "use client";
 
-import {
-  CategoryActionType,
-  CategoryContext,
-} from "../../src/app/context/categoryContext";
 import { useContext } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Category, getRealCategoryName } from "@/lib/category";
+import {
+  CategoryActionType,
+  CategoryContext,
+} from "@/src/app/context/categoryContext";
 
 interface Props {
   label: Category;
