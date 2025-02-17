@@ -2,7 +2,7 @@ import path from "path";
 import getCategory, { Category } from "@/lib/category";
 import { readFile } from "fs/promises";
 
-async function getAllPostData(): Promise<PostProps[]> {
+export async function getAllPostData(): Promise<PostProps[]> {
   const filePath = path.join(process.cwd(), "data", "posts.json");
   return readFile(filePath, "utf-8").then(JSON.parse);
 }
