@@ -1,5 +1,3 @@
-// "use client";
-
 import { getPostData, getPostById, getPostsByCategory } from "@/lib/post";
 import React from "react";
 import Markdown from "react-markdown";
@@ -11,7 +9,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostById(slug);
+  const post = await getPostById(slug);
 
   if (!post) return <div>hi</div>;
 
@@ -26,7 +24,7 @@ export default async function PostPage({
 }
 
 export async function generateStaticParam() {
-  const posts = getPostsByCategory([]);
+  const posts = await getPostsByCategory([]);
   return posts.map((post) => ({
     slug: post.id,
   }));
