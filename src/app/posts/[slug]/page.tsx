@@ -1,4 +1,4 @@
-import { getPostData, getPostById, getPostsByCategory } from "@/lib/post";
+import { getPostData, getPostById, getAllPostData } from "@/lib/post";
 import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -23,8 +23,8 @@ export default async function PostPage({
   );
 }
 
-export async function generateStaticParam() {
-  const posts = await getPostsByCategory([]);
+export async function generateStaticParams() {
+  const posts = await getAllPostData();
   return posts.map((post) => ({
     slug: post.id,
   }));
