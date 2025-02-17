@@ -1,8 +1,6 @@
 // "use client";
 
-import { getPostById } from "@/app/services/getPostById";
-import { getPostData } from "@/app/services/getPostData";
-import { getPostsByCategory } from "@/app/services/getPostsByCategory";
+import { getPostData, getPostById, getPostsByCategory } from "@/lib/post";
 import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -14,7 +12,7 @@ export default async function PostPage({
 }) {
   const { slug } = await params;
   const post = getPostById(slug);
-  console.log({ slug });
+
   if (!post) return <div>hi</div>;
 
   const markdown = await getPostData(post.path);

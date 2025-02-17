@@ -1,6 +1,6 @@
 import React from "react";
-import { getPostsByFeature } from "../../src/app/services/getPostsByFeature";
 import CardPost from "./CardPost";
+import { getPostsByFeature } from "@/lib/post";
 
 export default function SuggestedPosts() {
   const posts = getPostsByFeature(false);
