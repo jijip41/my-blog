@@ -13,18 +13,21 @@ export interface Form {
   subject: string;
 }
 
+const initialFormData = {
+  name: "",
+  from: "",
+  subject: "",
+  message: "",
+};
+
 export default function ContactPage() {
-  const [form, setForm] = useState<Form>({
-    name: "",
-    from: "",
-    subject: "",
-    message: "",
-  });
+  const [form, setForm] = useState<Form>(initialFormData);
 
   const [banner, setBanner] = useState<{
-    message: "Success";
-    state: "success";
+    message: string;
+    state: number;
   } | null>();
+
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
@@ -33,15 +36,26 @@ export default function ContactPage() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const res = await sendEmail(form);
+
+    if (res === 200) {
+      setBanner({ message: "💌 Email sent successfully", state: res });
+      setForm(initialFormData);
+    } else {
+      setBanner({ message: "❗️ Failed to send Email", state: res });
+    }
+
     setTimeout(() => {
       setBanner(null);
     }, 3000);
-
-    const res = await sendEmail(form);
-    console.log({ res });
   };
   return (
     <main className="flex flex-col gap-y-8 p-4 items-center">
+      {banner && (
+        <p className="fixed top-0 m-auto rounded-md bg-yellow-200 p-2">
+          {banner.message}
+        </p>
+      )}
       <section>
         <h2 className="text-lg font-semibold text-gray-500">Email 💌</h2>
         <form
