@@ -1,13 +1,18 @@
-import jsonData from "../data/posts.json";
-import { readFile } from "fs/promises";
 import path from "path";
 import getCategory, { Category } from "@/lib/category";
+import { readFile } from "fs/promises";
 
-export function getPostsByCategory(categories: Category[]) {
+async function getAllPostData(): Promise<PostProps[]> {
+  const filePath = path.join(process.cwd(), "data", "posts.json");
+  return readFile(filePath, "utf-8").then(JSON.parse);
+}
+
+export async function getPostsByCategory(categories: Category[]) {
+  const postData = await getAllPostData();
   if (categories.length === 0) {
-    return jsonData;
+    return postData;
   }
-  return jsonData.filter((post) => {
+  return postData.filter((post) => {
     const postCategory = getCategory(post.category);
     return postCategory && categories.includes(postCategory);
   });
@@ -15,12 +20,14 @@ export function getPostsByCategory(categories: Category[]) {
 
 export async function getPostData(fileName: string) {
   const filePath = path.join(process.cwd(), "data/posts", `${fileName}.md`);
-  const content = readFile(filePath, "utf-8");
-  return content;
+  const postData = await readFile(filePath, "utf-8");
+  return postData;
 }
 
-export function getPostById(postId: string) {
-  return jsonData.find(({ id }) => postId === id);
+export async function getPostById(postId: string) {
+  const postData = await getAllPostData();
+
+  return postData.find(({ id }) => postId === id);
 }
 
 export interface PostProps {
@@ -33,9 +40,13 @@ export interface PostProps {
   featured: boolean;
 }
 
-export function getPostsByFeature(featured: boolean): PostProps[] {
+export async function getPostsByFeature(
+  featured: boolean
+): Promise<PostProps[]> {
+  const postData = await getAllPostData();
+
   if (featured) {
-    return jsonData.filter((post) => post.featured);
+    return postData.filter((post) => post.featured);
   }
-  return jsonData.filter((post) => !post.featured);
+  return postData.filter((post) => !post.featured);
 }
