@@ -1,10 +1,7 @@
 import React from "react";
 import { getPostsByFeature } from "@/lib/post";
 import MultiCarousel from "./MultiCarousel";
-import Image from "next/image";
-import Link from "next/link";
 import PostCard from "./PostCard";
-import PostGrid from "./PostGrid";
 
 export default async function SuggestedPosts() {
   const posts = await getPostsByFeature(false);
