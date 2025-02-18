@@ -1,4 +1,4 @@
-import { Category } from "@/lib/category";
+import { categories, Category } from "@/lib/category";
 import { createContext, PropsWithChildren, useReducer } from "react";
 
 interface CategoryContextInterface {
@@ -30,7 +30,7 @@ const categoryReducer = (
   }
 };
 
-const initialState: Category[] = [];
+const initialState: Category[] = categories;
 
 export const CategoryContext = createContext<CategoryContextInterface>({
   state: initialState,
