@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import SocialMedia from "../SocialMedia";
 import { getEnvironmentVariable } from "@/lib/configUtils";
 
 export default function Hero() {
@@ -14,7 +13,6 @@ export default function Hero() {
           alt="profile photo"
           className="rounded-full"
         />
-        <SocialMedia />
       </section>
       <section className="flex flex-col items-center">
         <p className="mb-2 font-semibold">{"Hi 👋 I'm Jihye."}</p>
