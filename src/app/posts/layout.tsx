@@ -2,7 +2,7 @@
 
 import React from "react";
 import { CategoryProvider } from "../context/categoryContext";
-import { categories, Category } from "@/lib/category";
+import { categories } from "@/lib/category";
 import { CategoryCheckbox } from "@/components/posts/CategoryCheckbox";
 
 export default function PostsLayout({

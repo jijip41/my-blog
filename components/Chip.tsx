@@ -10,6 +10,7 @@ const style = tv({
       nextJs: "bg-blue-200 text-gray-800",
       react: "",
       tailwindCss: "",
+      typeScript: "bg-green-200",
     },
   },
 });
