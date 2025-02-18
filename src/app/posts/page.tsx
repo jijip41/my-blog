@@ -1,13 +1,12 @@
 import { getAllPostData } from "@/lib/post";
-import PostsWithCategory from "@/components/posts/PostsWithCategory";
+import Posts from "@/components/posts/Posts";
 
 export default async function PostsPage() {
   const posts = await getAllPostData();
 
   return (
-    <main className="flex flex-col gap-y-2">
-      Posts
-      <PostsWithCategory posts={posts} />
+    <main className="flex flex-col-reverse gap-y-4 p-4 sm:flex-row sm:space-x-4">
+      <Posts posts={posts} />
     </main>
   );
 }
