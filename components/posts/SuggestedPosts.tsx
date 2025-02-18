@@ -10,7 +10,7 @@ export default async function SuggestedPosts() {
       <h2 className="text-lg font-semibold text-gray-500">You may like</h2>
       <MultiCarousel>
         {posts.map((post) => (
-          <PostCard post={post} key={post.id} />
+          <PostCard post={post} key={post.path} />
         ))}
       </MultiCarousel>
     </section>

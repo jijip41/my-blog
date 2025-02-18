@@ -15,9 +15,9 @@ export default function PostsWithCategory({ posts }: { posts: PostProps[] }) {
     return state.includes(categoryValue);
   });
   return (
-    <section className="grid grid-cols-2 md:grid-cols-1 gap-y-2">
+    <section className="grid grid-cols-2 gap-y-2 md:grid-cols-1">
       {filteredPosts.map((post) => (
-        <InlinePost key={post.id} post={post} />
+        <InlinePost key={post.path} post={post} />
       ))}
     </section>
   );
