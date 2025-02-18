@@ -8,13 +8,16 @@ export async function getAllPostData(): Promise<PostProps[]> {
 }
 
 export interface PostProps {
-  id: string;
   title: string;
   description: string;
   date: string;
   category: string;
   path: string;
   featured: boolean;
+}
+
+export interface PostDataProps extends PostProps {
+  content: string;
 }
 
 export async function getPostsByCategory(categories: Category[]) {
@@ -28,16 +31,15 @@ export async function getPostsByCategory(categories: Category[]) {
   });
 }
 
-export async function getPostData(fileName: string) {
-  const filePath = path.join(process.cwd(), "data/posts", `${fileName}.md`);
-  const postData = await readFile(filePath, "utf-8");
-  return postData;
-}
+export async function getPostData(postPath: string) {
+  const filePath = path.join(process.cwd(), "data", "posts", `${postPath}.md`);
+  const content = await readFile(filePath, "utf-8");
 
-export async function getPostById(postId: string) {
-  const postData = await getAllPostData();
+  const allPosts = await getAllPostData();
+  const metadata = allPosts.find((post) => post.path === postPath);
 
-  return postData.find(({ id }) => postId === id);
+  if (!metadata) throw new Error(`Data for ${postPath} not found.`);
+  return { ...metadata, content };
 }
 
 export async function getPostsByFeature(

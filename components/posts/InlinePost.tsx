@@ -6,14 +6,14 @@ import Chip from "../Chip";
 import { PostProps } from "@/lib/post";
 
 export default function InlinePost({ post }: { post: PostProps }) {
-  const { title, description, date, category, path, id } = post;
+  const { title, description, date, category, path } = post;
 
   return (
     <Link
-      href={`/posts/${id}`}
-      className="border rounded-md shadow-md w-[180px] md:w-[60svw]"
+      href={`/posts/${path}`}
+      className="w-[180px] rounded-md border shadow-md md:w-[60svw]"
     >
-      <article className="flex flex-col md:flex-row gap-x-2">
+      <article className="flex flex-col gap-x-2 md:flex-row">
         <Image
           src={`/images/${path}.png`}
           alt={`image of ${title}`}
@@ -21,8 +21,8 @@ export default function InlinePost({ post }: { post: PostProps }) {
           height={80}
           className="rounded-t-sm md:rounded-l-sm"
         />
-        <div className="flex flex-col gap-y-2 p-4 w-[180px] md:w-[60svw] text-sm md:text-base truncate">
-          <h3 className="text-md font-semibold text-gray-500 truncate">
+        <div className="flex w-[180px] flex-col gap-y-2 truncate p-4 text-sm md:w-[60svw] md:text-base">
+          <h3 className="text-md truncate font-semibold text-gray-500">
             {title}
           </h3>
           <p className="truncate">

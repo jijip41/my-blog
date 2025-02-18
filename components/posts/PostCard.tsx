@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function PostCard({ post }: { post: PostProps }) {
   const { title, description, date, category, path } = post;
   return (
-    <Link href={`/posts/${post.id}`}>
+    <Link href={`/posts/${path}`}>
       <article className="flex flex-col gap-y-2 overflow-hidden rounded-t-md border p-4 shadow-sm hover:shadow-md">
         <time className="self-end text-sm">{date}</time>
         <h3 className="w-full truncate font-semibold text-gray-500">{title}</h3>
