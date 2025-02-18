@@ -1,13 +1,14 @@
-import { getPostData, getAllPostData } from "@/lib/post";
+import { getAllPostData, getPostData } from "@/lib/post";
 import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function PostPage({ params: { slug } }: Props) {
+export default async function PostPage({ params }: Props) {
+  const { slug } = await params;
   const postData = await getPostData(slug);
   const { content, title, description } = postData;
 
