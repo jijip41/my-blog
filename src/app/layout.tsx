@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jihye&apos;s blog",
-  description: "Jihye&apos;s journey to be an awesome developer",
+  title: "Jihye's blog",
+  description: "Jihye's journey to be an awesome developer",
 };
 
 export default function RootLayout({
@@ -26,31 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen p-8`}
+        className={`${geistSans.variable} ${geistMono.variable} mx-auto flex w-full max-w-screen-2xl flex-col p-8 antialiased`}
       >
-        <header className="flex justify-between">
-          <h1 className="font-bold text-lg">
-            <Link href="/">Jihye&apos;s Blog</Link>
-          </h1>
-          <nav>
-            <ul className="flex justify-evenly space-x-2 font-semibold">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/posts">Posts</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        {children}
-        <footer className="text-center mt-auto">&copy; 2025 Jihye Pak</footer>
+        <Header />
+        <main className="flex grow flex-col gap-y-8 p-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );
