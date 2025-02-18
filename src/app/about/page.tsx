@@ -6,8 +6,8 @@ import SocialMedia from "@/components/SocialMedia";
 
 export default function aboutPage() {
   return (
-    <main className="flex flex-col md:flex-row gap-x-8 p-12 items-center">
-      <section className="flex flex-col gap-y-4 flex-none p-2">
+    <main className="flex flex-col items-center gap-x-8 p-12 md:flex-row">
+      <section className="flex flex-none flex-col gap-y-4 p-2">
         <Image
           src={`${getEnvironmentVariable("PROFILE_PHOTO_URL")}`}
           width={150}
@@ -17,12 +17,13 @@ export default function aboutPage() {
         />
         <SocialMedia />
       </section>
-      <section className="flex flex-col text-md font-semibold text-gray-500">
-        <p>Hi 👋 I&apos;m Jihye.</p>
-        <p>I&apos;m a software engineer who loves to build things.</p>
+      <section className="text-md flex flex-col font-semibold text-gray-500">
+        <p>{"Hi 👋 I'm Jihye."}</p>
+        <p>{"I'm a software engineer who loves to build things."}</p>
         <p>
-          I&apos;m passionate about learning new technologies and sharing my
-          knowledge with others.
+          {
+            "I'm passionate about learning new technologies and sharing my knowledge with others."
+          }
         </p>
         <p>I hope I can share my journey with you through this blog.</p>
       </section>
