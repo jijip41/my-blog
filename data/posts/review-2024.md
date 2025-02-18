@@ -1,5 +1,3 @@
-# **2024 Year in Review**
-
 ## **What Did I Do?**
 
 I developed an internal UI tool to track and connect assets, enhancing user experience and productivity.

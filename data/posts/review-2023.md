@@ -1,5 +1,3 @@
-# **2023 Year in Review**
-
 ## **What Did I Do?**
 
 - Contributed to both **frontend and backend development**, helping the team deliver key features efficiently.
