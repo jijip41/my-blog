@@ -1,3 +1,5 @@
+"use client";
+
 import { categories, Category } from "@/lib/category";
 import { createContext, PropsWithChildren, useReducer } from "react";
 
