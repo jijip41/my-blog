@@ -1,31 +1,33 @@
-import { getPostData, getPostById, getAllPostData } from "@/lib/post";
+import { getPostData, getAllPostData } from "@/lib/post";
 import React from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default async function PostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const post = await getPostById(slug);
+interface Props {
+  params: { slug: string };
+}
 
-  if (!post) return <div>hi</div>;
+export default async function PostPage({ params: { slug } }: Props) {
+  const postData = await getPostData(slug);
+  const { content, title, description } = postData;
 
-  const markdown = await getPostData(post.path);
   return (
-    <main className="border p-4 flex flex-col space-y-2">
-      <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
-      <h1>{post?.title}</h1>
-      <p>{post?.description}</p>
-    </main>
+    <section className="flex flex-col space-y-4 border p-4">
+      <h2 className="text-xl font-semibold text-gray-700">{title}</h2>
+      <p className="text-grey-700 text-lg">{description}</p>
+      <Markdown
+        remarkPlugins={[remarkGfm]}
+        className="rounded-md bg-gray-100 p-4"
+      >
+        {content}
+      </Markdown>
+    </section>
   );
 }
 
 export async function generateStaticParams() {
   const posts = await getAllPostData();
   return posts.map((post) => ({
-    slug: post.id,
+    slug: post.path,
   }));
 }

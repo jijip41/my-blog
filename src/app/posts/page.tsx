@@ -1,7 +1,7 @@
 import { getAllPostData } from "@/lib/post";
 import PostsWithCategory from "@/components/posts/PostsWithCategory";
 
-export default async function postsPage() {
+export default async function PostsPage() {
   const posts = await getAllPostData();
 
   return (
