@@ -3,7 +3,10 @@ export enum Category {
   NextJs = "nextJs",
   React = "react",
   TailwindCss = "tailwindCss",
+  TypeScript = "typeScript",
 }
+
+export const categories = Object.values(Category);
 
 export default function getCategory(category: string) {
   switch (category) {
@@ -15,6 +18,8 @@ export default function getCategory(category: string) {
       return Category.React;
     case "tailwindCss":
       return Category.TailwindCss;
+    case "typeScript":
+      return Category.TypeScript;
     default:
       return undefined;
   }
@@ -30,6 +35,8 @@ export function getRealCategoryName(name: Category | undefined) {
       return "React";
     case Category.TailwindCss:
       return "Tailwind CSS";
+    case Category.TypeScript:
+      return "TypeScript";
     default:
       return undefined;
   }
