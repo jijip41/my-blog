@@ -7,6 +7,16 @@ export async function getAllPostData(): Promise<PostProps[]> {
   return readFile(filePath, "utf-8").then(JSON.parse);
 }
 
+export interface PostProps {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  category: string;
+  path: string;
+  featured: boolean;
+}
+
 export async function getPostsByCategory(categories: Category[]) {
   const postData = await getAllPostData();
   if (categories.length === 0) {
@@ -28,16 +38,6 @@ export async function getPostById(postId: string) {
   const postData = await getAllPostData();
 
   return postData.find(({ id }) => postId === id);
-}
-
-export interface PostProps {
-  id: string;
-  title: string;
-  description: string;
-  date: string;
-  category: string;
-  path: string;
-  featured: boolean;
 }
 
 export async function getPostsByFeature(
