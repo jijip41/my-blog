@@ -4,10 +4,11 @@ import Chip from "../Chip";
 import getCategory from "@/lib/category";
 import { PostProps } from "@/lib/post";
 
-export default function CardPost({ post }: { post: PostProps }) {
+export default function PostCard({ post }: { post: PostProps }) {
   const { title, description, date, category, path } = post;
   return (
-    <article className="flex flex-col gap-y-2 border shadow-sm rounded-t-md p-4">
+    <article className="flex flex-col gap-y-2 overflow-hidden rounded-t-md border p-4 shadow-sm">
+      <time className="self-end text-sm">{date}</time>
       <h3 className="font-semibold text-gray-500">{title}</h3>
       <Image
         src={`/images/${path}.png`}
@@ -16,8 +17,7 @@ export default function CardPost({ post }: { post: PostProps }) {
         height={340}
         className="m-auto"
       />
-      <p>✨ {description}</p>
-      <p className="text-sm ml-auto">{date}</p>
+      <p className="w-full truncate">✨ {description}</p>
       <Chip category={getCategory(category)} />
     </article>
   );
