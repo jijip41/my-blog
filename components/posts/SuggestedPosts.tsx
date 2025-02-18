@@ -1,6 +1,6 @@
 import React from "react";
 import { getPostsByFeature } from "@/lib/post";
-import PostsCarousel from "./Carousel";
+import PostsCarousel from "./PostsCarousel";
 
 export default async function SuggestedPosts() {
   const posts = await getPostsByFeature(false);
