@@ -15,7 +15,7 @@
     "date": "2023-12-31",
     "category": "review",
     "path": "review-2023",
-    "featured": true
+    "featured": false
   },
   {
     "id": "post-3",
@@ -24,6 +24,15 @@
     "date": "2025-01-01",
     "category": "nextJs",
     "path": "nextjs-link",
+    "featured": true
+  },
+  {
+    "id": "post-4",
+    "title": "TypeScript Union type",
+    "description": "When to use Union type?",
+    "date": "2025-01-04",
+    "category": "typeScript",
+    "path": "typescript-union",
     "featured": false
   }
 ]
