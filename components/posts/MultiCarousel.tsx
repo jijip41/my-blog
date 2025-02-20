@@ -27,23 +27,21 @@ interface Props {
 }
 export default function MultiCarousel({ children }: Props) {
   return (
-    <div className="relative">
-      <Carousel
-        additionalTransfrom={0}
-        arrows
-        autoPlay
-        autoPlaySpeed={3000}
-        infinite
-        keyBoardControl
-        pauseOnHover
-        responsive={responsive}
-        shouldResetAutoplay
-        slidesToSlide={1}
-        swipeable
-        itemClass="m-2"
-      >
-        {children}
-      </Carousel>
-    </div>
+    <Carousel
+      additionalTransfrom={0}
+      arrows
+      autoPlay
+      autoPlaySpeed={3000}
+      infinite
+      keyBoardControl
+      pauseOnHover
+      responsive={responsive}
+      shouldResetAutoplay
+      slidesToSlide={1}
+      swipeable
+      itemClass="m-2"
+    >
+      {children}
+    </Carousel>
   );
 }

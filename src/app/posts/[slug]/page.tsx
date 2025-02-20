@@ -1,7 +1,8 @@
+import PostMarkdown from "@/components/posts/MarkdownViewer";
 import { getAllPostData, getPostData } from "@/lib/post";
+import { CalendarRange } from "lucide-react";
+import Image from "next/image";
 import React from "react";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -10,19 +11,28 @@ interface Props {
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const postData = await getPostData(slug);
-  const { content, title, description } = postData;
+  const { content, title, description, path, date } = postData;
 
   return (
-    <section className="flex flex-col space-y-4 border p-4">
-      <h2 className="text-xl font-semibold text-gray-700">{title}</h2>
-      <p className="text-grey-700 text-lg">{description}</p>
-      <Markdown
-        remarkPlugins={[remarkGfm]}
-        className="rounded-md bg-gray-100 p-4"
-      >
-        {content}
-      </Markdown>
-    </section>
+    <article className="overflow-hidden rounded-2xl bg-gray-100">
+      <Image
+        className="h-1/5 max-h-[450px] w-full"
+        src={`/images/${path}.png`}
+        alt={`image for ${path}`}
+        width={760}
+        height={400}
+      />
+      <section className="flex flex-col p-4">
+        <time className="flex gap-x-2 self-end text-sky-500">
+          <CalendarRange />
+          <p className="font-semibold"> {date.toString()}</p>
+        </time>
+        <h2 className="text-2xl font-semibold text-sky-700">{title}</h2>
+        <p className="text-lg text-sky-600">{description}</p>
+        <div className="mb-8 mt-4 w-44 border border-sky-600" />
+        <PostMarkdown content={content} />
+      </section>
+    </article>
   );
 }
 

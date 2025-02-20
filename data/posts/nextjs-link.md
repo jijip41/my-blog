@@ -38,7 +38,7 @@ The `useRouter` hook from `next/router` (or `next/navigation` in App Router) is 
 
 **Example:**
 
-```tsx
+```jsx
 "use client"; // If using App Router
 
 import { useRouter } from "next/navigation";
@@ -70,5 +70,3 @@ export default function Dashboard() {
 
 - Use `<Link>` when you want **static** navigation within JSX.
 - Use `useRouter` when you need **dynamic** navigation or programmatic control.
-
-Let me know if you need more clarification! 🚀
