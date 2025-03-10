@@ -52,3 +52,25 @@ export async function getPostsByFeature(
   }
   return postData.filter((post) => !post.featured);
 }
+
+export async function getPrevPost(postPath: string) {
+  const postData = await getAllPostData();
+
+  const fileIndex = postData.findIndex((post) => post.path === postPath);
+  const prevPostIndex = fileIndex - 1;
+  const prevPost = prevPostIndex < 0 ? null : postData[prevPostIndex];
+
+  return prevPost;
+}
+
+export async function getNextPost(postPath: string) {
+  const postData = await getAllPostData();
+
+  const fileIndex = postData.findIndex((post) => post.path === postPath);
+
+  const nextPostIndex = fileIndex + 1;
+  const nextPost =
+    fileIndex === postData.length - 1 ? null : postData[nextPostIndex];
+
+  return nextPost;
+}
