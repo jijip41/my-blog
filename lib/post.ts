@@ -16,9 +16,11 @@ export interface PostProps {
   featured: boolean;
 }
 
-export interface PostDataProps extends PostProps {
+export type PostDataProps = PostProps & {
   content: string;
-}
+  nextPost: PostProps | null;
+  prevPost: PostProps | null;
+};
 
 export async function getPostsByCategory(categories: Category[]) {
   const postData = await getAllPostData();
@@ -31,15 +33,21 @@ export async function getPostsByCategory(categories: Category[]) {
   });
 }
 
-export async function getPostData(postPath: string) {
+export async function getPostData(postPath: string): Promise<PostDataProps> {
   const filePath = path.join(process.cwd(), "data", "posts", `${postPath}.md`);
   const content = await readFile(filePath, "utf-8");
 
-  const allPosts = await getAllPostData();
-  const metadata = allPosts.find((post) => post.path === postPath);
+  const posts = await getAllPostData();
+  const post = posts.find((post) => post.path === postPath);
 
-  if (!metadata) throw new Error(`Data for ${postPath} not found.`);
-  return { ...metadata, content };
+  if (!post) throw new Error(`Data for ${postPath} not found.`);
+
+  const index = posts.indexOf(post);
+
+  const nextPost = index > 0 ? posts[index - 1] : null;
+  const prevPost = index < posts.length ? posts[index + 1] : null;
+
+  return { ...post, content, nextPost, prevPost };
 }
 
 export async function getPostsByFeature(
@@ -51,26 +59,4 @@ export async function getPostsByFeature(
     return postData.filter((post) => post.featured);
   }
   return postData.filter((post) => !post.featured);
-}
-
-export async function getPrevPost(postPath: string) {
-  const postData = await getAllPostData();
-
-  const fileIndex = postData.findIndex((post) => post.path === postPath);
-  const prevPostIndex = fileIndex - 1;
-  const prevPost = prevPostIndex < 0 ? null : postData[prevPostIndex];
-
-  return prevPost;
-}
-
-export async function getNextPost(postPath: string) {
-  const postData = await getAllPostData();
-
-  const fileIndex = postData.findIndex((post) => post.path === postPath);
-
-  const nextPostIndex = fileIndex + 1;
-  const nextPost =
-    fileIndex === postData.length - 1 ? null : postData[nextPostIndex];
-
-  return nextPost;
 }
