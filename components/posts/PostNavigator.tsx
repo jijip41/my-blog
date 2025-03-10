@@ -1,22 +1,43 @@
 import { PostProps } from "@/lib/post";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface Props extends PropsWithChildren {
+type Props = {
   post: PostProps;
-  className?: string;
-}
-export default function PostNavigator({ children, post, className }: Props) {
-  const { path, title } = post;
+  type: "next" | "prev";
+};
+export default function PostNavigator({ post, type }: Props) {
+  const { path, title, description } = post;
+
   return (
-    <Link
-      className={`${className} flex w-1/3 flex-col gap-x-2 rounded-md p-4 shadow-md hover:bg-yellow-50 hover:shadow-lg`}
-      href={`/posts/${path}`}
-    >
-      <p className={`${className} text-lg font-semibold text-gray-500`}>
-        {children}
-      </p>
-      <p className={`${className}`}>{title}</p>
+    <Link href={`/posts/${path}`} className="max-h-78 relative w-full bg-black">
+      <Image
+        src={`/images/${path}.png`}
+        alt={title}
+        width={150}
+        height={80}
+        className="w-full opacity-40"
+      />
+      <div className="group absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 items-center justify-around text-white">
+        {type === "next" && (
+          <ChevronLeft
+            size={80}
+            className="text-yellow-300 transition-all group-hover:size-24"
+          />
+        )}
+        <div className="flex w-2/3 flex-col">
+          <h3 className="text-3xl font-bold ">{title}</h3>
+          <p className="font-bold">{description}</p>
+        </div>
+        {type === "prev" && (
+          <ChevronRight
+            size={80}
+            className="text-yellow-300 transition-all group-hover:size-24"
+          />
+        )}
+      </div>
     </Link>
   );
 }
