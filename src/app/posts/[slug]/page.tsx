@@ -1,3 +1,4 @@
+
 import PostContent from "@/components/posts/PostContent";
 import PostNavigator from "@/components/posts/PostNavigator";
 import { getAllPostData, getPostData } from "@/lib/post";
