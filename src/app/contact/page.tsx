@@ -1,5 +1,11 @@
 import ContactForm from "@/components/ContactForm";
 import SocialMedia from "@/components/SocialMedia";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact to Jihye",
+};
 
 export default function ContactPage() {
   return (
