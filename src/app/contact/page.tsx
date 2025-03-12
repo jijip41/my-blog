@@ -49,7 +49,7 @@ export default function ContactPage() {
     }, 3000);
   };
   return (
-    <main className="flex flex-col gap-y-8 p-4 items-center">
+    <main className="flex flex-col items-center gap-y-8 p-4">
       {banner && (
         <p className="fixed top-0 m-auto rounded-md bg-yellow-200 p-2">
           {banner.message}
@@ -59,11 +59,11 @@ export default function ContactPage() {
         <h2 className="text-lg font-semibold text-gray-500">Email 💌</h2>
         <form
           onSubmit={onSubmit}
-          className="bg-rose-100 p-4 rounded-md text-blue-950"
+          className="rounded-md bg-rose-100 p-4 text-blue-950"
         >
-          <div className="mb-4 flex flex-col gap-y-4 w-[50svw]">
+          <div className="mb-4 flex w-[50svw] flex-col gap-y-4">
             <div className="flex flex-col">
-              <label className="font-semibold" htmlFor="form-name">
+              <label className="font-semibold" htmlFor="name">
                 Name
               </label>
               <input
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 value={form.name}
                 autoComplete="name"
                 maxLength={50}
-                className="text-black flex-1"
+                className="flex-1 text-black"
                 onChange={(e) =>
                   setForm((prev) => ({ ...prev, name: e.target.value }))
                 }
@@ -90,7 +90,7 @@ export default function ContactPage() {
                 autoComplete="email"
                 maxLength={80}
                 type="email"
-                className="text-black flex-1"
+                className="flex-1 text-black"
                 onChange={onChange}
               />
             </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                 value={form.subject}
                 required
                 maxLength={80}
-                className="text-black flex-1"
+                className="flex-1 text-black"
                 onChange={onChange}
               />
             </div>
@@ -118,13 +118,13 @@ export default function ContactPage() {
                 value={form.message}
                 required
                 rows={5}
-                className="text-black flex-1"
+                className="flex-1 text-black"
                 onChange={onChange}
               />
             </div>
           </div>
           <button
-            className="rounded bg-rose-500 text-white font-semibold p-2 block m-auto hover:bg-rose-600"
+            className="m-auto block rounded bg-rose-500 p-2 font-semibold text-white hover:bg-rose-600"
             type="submit"
           >
             Send
