@@ -13,7 +13,7 @@ export default function Hero() {
           alt="profile photo"
           className="rounded-full"
         />
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center rounded-md bg-gray-50 p-4">
           <p className="mb-2 font-semibold">{"Hi 👋 I'm Jihye."}</p>
           <p>{"I'm a software engineer who loves to build things."}</p>
           <p>
