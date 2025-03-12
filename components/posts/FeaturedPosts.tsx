@@ -1,5 +1,5 @@
 import React from "react";
-import { getPostsByFeature } from "@/lib/post";
+import { getPostsByFeature } from "@/service/post";
 import PostGrid from "./PostGrid";
 
 export default async function FeaturedPosts() {

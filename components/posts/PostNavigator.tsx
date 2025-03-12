@@ -1,4 +1,4 @@
-import { PostProps } from "@/lib/post";
+import { PostProps } from "@/service/post";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";

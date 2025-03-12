@@ -2,7 +2,7 @@
 
 import getCategory from "@/lib/category";
 import React, { useContext } from "react";
-import { PostProps } from "@/lib/post";
+import { PostProps } from "@/service/post";
 import { CategoryContext } from "@/src/app/context/categoryContext";
 import PostCard from "./PostCard";
 

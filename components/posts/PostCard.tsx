@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Chip from "../Chip";
 import getCategory from "@/lib/category";
-import { PostProps } from "@/lib/post";
+import { PostProps } from "@/service/post";
 import Link from "next/link";
 
 export default function PostCard({ post }: { post: PostProps }) {

@@ -2,7 +2,7 @@ import { CalendarRange } from "lucide-react";
 import PostMarkdown from "@/components/posts/MarkdownViewer";
 
 import React from "react";
-import { PostDataProps } from "@/lib/post";
+import { PostDataProps } from "@/service/post";
 
 export default function PostContent({ postData }: { postData: PostDataProps }) {
   const { content, title, description, date } = postData;

@@ -1,6 +1,6 @@
 import React from "react";
 import PostCard from "./PostCard";
-import { PostProps } from "@/lib/post";
+import { PostProps } from "@/service/post";
 
 interface Props {
   posts: PostProps[];
