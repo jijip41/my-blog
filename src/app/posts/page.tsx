@@ -1,4 +1,4 @@
-import { getAllPostData } from "@/lib/post";
+import { getAllPostData } from "@/service/post";
 import Posts from "@/components/posts/Posts";
 
 export default async function PostsPage() {

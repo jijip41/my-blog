@@ -1,36 +1,21 @@
-import { getEnvironmentVariable } from "@/lib/configUtils";
-import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-import { Form } from "../page";
+import { email } from "@/service/email";
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: getEnvironmentVariable("ADMIN_EMAIL"),
-    pass: getEnvironmentVariable("ADMIN_EMAIL_PASSWORD"),
-  },
-});
-
-export async function POST(request: NextRequest) {
-  const res: Form = await request.json();
-  const { from, message, name, subject } = res;
-  try {
-    await transporter.sendMail({
-      from,
-      to: getEnvironmentVariable("ADMIN_EMAIL"),
-      replyTo: from,
-      subject: `[Blog]: ${subject}`,
-      html: `
-          <p>From: ${name}</p>
-          <p>Email address: ${from}</p>
-          <p>Message: ${message}</p>
-          `,
+export async function POST(request: Request) {
+  const body = await request.json();
+  console.log({ body });
+  return email(body)
+    .then(() => {
+      return new Response(
+        JSON.stringify({ message: "💌 Email sent successfully ", status: 200 })
+      );
+    })
+    .catch((error) => {
+      console.error(error);
+      return new Response(
+        JSON.stringify({
+          message: "❗️ Failed to send email. Please try again later.",
+          status: 500,
+        })
+      );
     });
-    return NextResponse.json({ message: "💌 Email sent successfully " });
-  } catch (error) {
-    console.error("❗️ Failed to send email. Please try again later.", error);
-    throw error;
-  }
 }

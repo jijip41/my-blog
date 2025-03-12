@@ -1,6 +1,6 @@
 import PostContent from "@/components/posts/PostContent";
 import PostNavigator from "@/components/posts/PostNavigator";
-import { getAllPostData, getPostData } from "@/lib/post";
+import { getAllPostData, getPostData } from "@/service/post";
 import Image from "next/image";
 import React from "react";
 

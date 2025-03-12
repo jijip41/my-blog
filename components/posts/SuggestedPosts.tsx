@@ -1,5 +1,5 @@
 import React from "react";
-import { getPostsByFeature } from "@/lib/post";
+import { getPostsByFeature } from "@/service/post";
 import MultiCarousel from "./MultiCarousel";
 import PostCard from "./PostCard";
 
