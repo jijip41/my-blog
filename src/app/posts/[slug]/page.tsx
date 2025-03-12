@@ -1,6 +1,7 @@
 import PostContent from "@/components/posts/PostContent";
 import PostNavigator from "@/components/posts/PostNavigator";
 import { getAllPostData, getPostData } from "@/service/post";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
@@ -38,4 +39,14 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.path,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const { title, description } = await getPostData(slug);
+
+  return {
+    title,
+    description,
+  };
 }
