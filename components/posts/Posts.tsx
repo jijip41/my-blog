@@ -1,7 +1,7 @@
 import { CategoryProvider } from "@/src/app/context/categoryContext";
 import React from "react";
 import Category from "./Category";
-import { PostProps } from "@/lib/post";
+import { PostProps } from "@/service/post";
 import FilteredPosts from "./FilteredPosts";
 
 interface Props {
