@@ -1,12 +1,12 @@
 import path from "path";
 import getCategory, { Category } from "@/lib/category";
 import { readFile } from "fs/promises";
+import { cache } from "react";
 
-export async function getAllPostData(): Promise<PostProps[]> {
+export const getAllPostData = cache(async (): Promise<PostProps[]> => {
   const filePath = path.join(process.cwd(), "data", "posts.json");
   return readFile(filePath, "utf-8").then(JSON.parse);
-}
-
+});
 export interface PostProps {
   title: string;
   description: string;
