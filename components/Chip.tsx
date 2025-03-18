@@ -11,6 +11,7 @@ const style = tv({
       react: "",
       tailwindCss: "",
       typeScript: "bg-green-200",
+      frontend: "bg-rose-600 text-white",
     },
   },
 });

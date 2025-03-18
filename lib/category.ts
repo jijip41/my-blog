@@ -4,6 +4,7 @@ export enum Category {
   React = "react",
   TailwindCss = "tailwindCss",
   TypeScript = "typeScript",
+  Frontend = "frontend",
 }
 
 export const categories = Object.values(Category);
@@ -20,6 +21,8 @@ export default function getCategory(category: string) {
       return Category.TailwindCss;
     case "typeScript":
       return Category.TypeScript;
+    case "frontend":
+      return Category.Frontend;
     default:
       return undefined;
   }
@@ -37,6 +40,8 @@ export function getRealCategoryName(name: Category | undefined) {
       return "Tailwind CSS";
     case Category.TypeScript:
       return "TypeScript";
+    case Category.Frontend:
+      return "Frontend";
     default:
       return undefined;
   }
