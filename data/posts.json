@@ -1,18 +1,18 @@
 [
   {
-    "title": "2024 Year in Review",
-    "description": "What I did and learned in 2024",
-    "date": "2024-12-31",
+    "title": "Building a tool from Scratch",
+    "description": "Why 0-to-1 Projects Are Hard and How I Tackled One",
+    "date": "2025-02-17",
     "category": "review",
-    "path": "review-2024",
-    "featured": true
+    "path": "review-build-from-scratch",
+    "featured": false
   },
   {
-    "title": "2023 Year in Review",
-    "description": "What I did and learned in 2023",
-    "date": "2023-12-31",
-    "category": "review",
-    "path": "review-2023",
+    "title": "TypeScript Union type",
+    "description": "When to use Union type?",
+    "date": "2025-01-04",
+    "category": "typeScript",
+    "path": "typescript-union",
     "featured": false
   },
   {
@@ -21,14 +21,30 @@
     "date": "2025-01-01",
     "category": "nextJs",
     "path": "nextjs-link",
+    "featured": false
+  },
+  {
+    "title": "2024 Year in Review",
+    "description": "What I did and learned in 2024",
+    "date": "2024-12-31",
+    "category": "review",
+    "path": "review-2024",
     "featured": true
   },
   {
-    "title": "TypeScript Union type",
-    "description": "When to use Union type?",
-    "date": "2025-01-04",
-    "category": "typeScript",
-    "path": "typescript-union",
+    "title": "Using Figma as a Developer",
+    "description": "A Story of Collaboration and Simplicity",
+    "date": "2024-11-29",
+    "category": "frontend",
+    "path": "frontend-figma",
+    "featured": true
+  },
+  {
+    "title": "2023 Year in Review",
+    "description": "What I did and learned in 2023",
+    "date": "2023-12-31",
+    "category": "review",
+    "path": "review-2023",
     "featured": false
   }
 ]

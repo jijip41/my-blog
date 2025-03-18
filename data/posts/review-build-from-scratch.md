@@ -1,0 +1,69 @@
+#### Why 0-to-1 Projects Are Hard and How I Tackled One
+
+Building a product from scratch—also known as a 0-to-1 project—is one of the hardest challenges in software development. Unlike incremental improvements to an existing system, you’re creating something entirely new, often without a clear roadmap(requirements are vague). Over the past nine months, I built a React-based tool to help infrastructure planners at my company track over a million assets and store them in a database. I ended up developing three different versions before getting it right. Here’s why it was so difficult and what I learned along the way.
+
+---
+
+## Why It Was Hard
+
+### Unclear Requirements
+
+The biggest challenge was that the users themselves didn’t know exactly what they wanted. Often, they were unaware of missing data fields until they started using the tool. Additionally, some of the workflow details they initially provided turned out to be inaccurate. This meant constant iterations and adjustments.
+
+### Constantly Changing Ideas
+
+As development progressed, new ideas kept emerging. While innovation is great, it led to inevitable overengineering. I had to actively call out when we needed to focus on proving the core user flow rather than implementing every new idea/feature immediately.
+
+### Redefining and Reprioritising Requirements
+
+Given the evolving needs and new discoveries, I had to continuously redefine requirements and reprioritise tasks. This balancing act was critical to ensure we were making meaningful progress rather than getting lost in an endless loop of changes.
+
+### Unknowns Everywhere
+
+A 0-to-1 project is full of unknowns. There were many aspects we didn’t anticipate—data inconsistencies, workflow discrepancies, and unexpected technical constraints.
+
+### Hard to Predict User Interaction
+
+Even when we thought we had a solid design, it was difficult to predict how users would actually interact with the app. Only after putting the tool in their hands did we discover usability issues that required adjustments.
+
+### Misalignment Between Users and Developers
+
+Users often don’t understand how data is structured, and developers don’t always understand how users think about their work. Bridging this gap was a constant challenge and required ongoing communication.
+
+### Complexity in Data and Code
+
+The data itself was complicated, and as the project evolved, the codebase grew rapidly. Without careful management, it would have become unmanageable.
+
+---
+
+## What I Did and Learned
+
+### Build an MVP Fast and Iterate
+
+Instead of trying to get everything perfect upfront, I focused on building a Minimum Viable Product (MVP) quickly. By demoing it early and getting feedback, I could iterate based on real user interactions rather than assumptions.
+
+### Constant Communication with the Team
+
+I made it a priority to stay in sync with my team. Frequent brainstorming sessions helped us refine user experience and solve problems together.
+
+### Dedicated Time for Refactoring
+
+With the rapidly growing codebase, I frequently set aside time to refactor. This kept the code clean and maintainable while allowing us to adapt to new requirements smoothly.
+
+### Code Reviews to Stay Aligned
+
+Regular code reviews were essential for maintaining consistency across the project. They helped ensure we were all on the same page and kept technical debt in check.
+
+### Whiteboarding for Brainstorming
+
+Whiteboarding sessions proved invaluable in visualising workflows, brainstorming solutions, and aligning the team’s understanding of complex issues.
+
+### Weekly User Meetings for Feedback
+
+I established weekly meetings with users to demo the latest updates and gather feedback. This helped us quickly identify pain points and iterate based on actual user needs rather than assumptions.
+
+## Final Thoughts
+
+0-to-1 projects are tough because they require constant adaptation, deep collaboration, and a willingness to embrace the unknown. The key is to stay agile—build fast, get feedback, iterate, and communicate relentlessly. By focusing on the user experience and refining the process step by step, we were able to build a tool that truly met the needs of our infrastructure planners.
+
+If you’re embarking on a 0-to-1 project, expect chaos—but embrace it. The challenge is real, but so is the reward when you see your product finally come to life.

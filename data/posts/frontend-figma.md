@@ -1,0 +1,27 @@
+_(Image by Alexander Shatov @Unsplash)_
+
+As developers, we often rely on designers to shape the user interface and experience of our applications. But what happens when there's no designer on the team? This was the challenge my squad faced on a recent project, and Figma became an unexpected hero in our workflow.
+
+## Brainstorming and Collaboration in Figma
+
+Without a dedicated designer, our squad needed a way to share ideas and iterate quickly. We turned to Figma, using it as a collaborative whiteboard to brainstorm asynchronously. Team members dropped in sketches, wireframes, and ideas, commenting on each other’s work to refine our vision. This asynchronous workflow allowed us to stay productive without blocking anyone's progress, ensuring that we could continue iterating while keeping development moving forward.
+
+## Giving Early Feedback on Implementations
+
+One of the biggest advantages of working in Figma was how easily I could collaborate with other engineers. Instead of waiting for a feature to be coded and then giving UI/UX feedback, I could jump into Figma and review a teammate’s design choices beforehand. This allowed us to refine UI elements early in the process, reducing unnecessary back-and-forth and ensuring a smoother implementation phase. By catching issues early, we improved the final experience with minimal effort.
+
+## Keeping the UI Simple and Focused
+
+As a developer, I prioritise clarity and usability in the UI. One of my core principles is to remove any unnecessary design elements or data that don’t add real value. Figma helped me achieve this by making it easy to strip down designs, simplify layouts, and ensure that every UI component had a clear purpose. The visual nature of Figma made it easy to spot clutter and remove distractions, leading to a cleaner and more intuitive interface.
+
+## Leveraging Figma’s Design System
+
+One of the best aspects of using Figma in my team was its predefined assets and design systems. Instead of creating UI components from scratch, I could reuse existing design elements, ensuring consistency across the application. This not only saved time but also helped maintain a uniform look and feel. Having access to a well-structured design system meant that our UI remained cohesive, even as different engineers contributed to the project.
+
+## Ensuring Component Consistency
+
+Using Figma also made it easier to standardise UI components across the application. Whether it was buttons, input fields, or modals, I could ensure that styles and spacing remained consistent. This consistency improved the user experience while also making the codebase cleaner—less custom styling meant easier maintenance and fewer inconsistencies creeping in over time.
+
+## Conclusion
+
+While Figma is traditionally seen as a design tool, it proved invaluable in our development workflow. From brainstorming and collaboration to early feedback and UI simplification, it helped us move faster and build a better product. Even without a dedicated designer, we were able to create a clean, user-friendly interface while keeping development efficient. If you're a developer who hasn’t explored Figma yet, I highly recommend giving it a try—you might be surprised by how much it can improve your workflow.
