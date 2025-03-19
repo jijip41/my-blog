@@ -1,36 +1,41 @@
-import React from "react";
-
-const FE_SKILLS = ["TypeScript", "React", "Next.js", "CSS", "HTML"];
-const BE_SKILLS = ["Node.js", "Express", "Neo4j"];
-const API_TECHNOLOGIES = ["GraphQL", "REST APIs"];
-const TOOLS_AND_TESTING = ["Jest", "Testing Library", "Git"];
+import { skills } from "@/data/about/skills";
+import SkillChip from "../SkillChip";
 
 export default function Skillset() {
+  const allSkills = Object.values(skills).flatMap(({ data, theme }) =>
+    data.map((skill) => ({ skill, theme }))
+  );
+
   return (
     <>
       <h3 className="font-semibold">Skillset</h3>
-      <div className="flex gap-x-2">
-        {FE_SKILLS.map((skill) => (
-          <span key={skill} className="bg-green-600 px-2 py-1 text-white">
-            {skill}
-          </span>
-        ))}
-        {BE_SKILLS.map((skill) => (
-          <span key={skill} className="bg-orange-500 px-2 py-1">
-            {skill}
-          </span>
-        ))}
-        {TOOLS_AND_TESTING.map((skill) => (
-          <span key={skill} className="bg-rose-500 px-2 py-1 text-white">
-            {skill}
-          </span>
-        ))}
-        {API_TECHNOLOGIES.map((skill) => (
-          <span key={skill} className="bg-blue-500 px-2 py-1 text-white">
-            {skill}
-          </span>
-        ))}
+      <div className="flex max-w-lg flex-wrap gap-2 text-ellipsis">
+        {allSkills.map(({ skill, theme }) => {
+          return (
+            <SkillChip skill={skill} bgColor={getColor(theme)} key={skill} />
+          );
+        })}
       </div>
     </>
   );
+}
+
+enum Color {
+  orange = "orange",
+  green = "green",
+  rose = "rose",
+  blue = "blue",
+}
+
+function getColor(color: string) {
+  switch (color) {
+    case "orange":
+      return Color.orange;
+    case "green":
+      return Color.green;
+    case "rose":
+      return Color.rose;
+    case "blue":
+      return Color.blue;
+  }
 }

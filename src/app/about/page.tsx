@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function aboutPage() {
   return (
-    <section className="w-max-md mx-auto flex flex-col items-center gap-y-4">
+    <section className="w-max-md mx-auto flex flex-col items-center gap-y-8">
       <Hero />
       <About />
       <SocialMedia />
