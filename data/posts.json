@@ -1,5 +1,13 @@
 [
   {
+    "title": "Migrating from Leaflet to Mapbox",
+    "description": "A performance-Driven Decision",
+    "date": "2025-02-22",
+    "category": "frontend",
+    "path": "frontend-map-library",
+    "featured": true
+  },
+  {
     "title": "Building a tool from Scratch",
     "description": "Why 0-to-1 Projects Are Hard and How I Tackled One",
     "date": "2025-02-17",
