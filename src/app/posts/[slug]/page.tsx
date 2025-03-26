@@ -15,22 +15,20 @@ export default async function PostPage({ params }: Props) {
   const { path, nextPost, prevPost } = postData;
 
   return (
-    <div className="flex flex-col gap-y-4">
-      <article className="overflow-hidden rounded-2xl bg-gray-100">
-        <Image
-          className="h-1/5 max-h-[450px] w-full"
-          src={`/images/${path}.png`}
-          alt={`image for ${path}`}
-          width={760}
-          height={400}
-        />
-        <PostContent postData={postData} />
-      </article>
-      <section className="flex flex-col md:flex-row">
+    <section className="mx-auto w-3/4 overflow-hidden">
+      <Image
+        className="h-content max-h-[500px] w-full"
+        src={`/images/${path}.png`}
+        alt={`image for ${path}`}
+        width={400}
+        height={300}
+      />
+      <PostContent postData={postData} />
+      <div className="m-8 flex flex-col md:flex-row">
         {nextPost && <PostNavigator post={nextPost} type="next" />}
         {prevPost && <PostNavigator post={prevPost} type="prev" />}
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -50,3 +48,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
   };
 }
+
+export const dynamicParams = false;
