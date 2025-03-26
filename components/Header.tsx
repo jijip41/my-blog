@@ -27,7 +27,7 @@ const menu = [
 export default function Header() {
   const pathname = usePathname();
   return (
-    <header className="flex justify-between">
+    <header className="flex items-center justify-between">
       <h1 className="text-lg font-bold">
         <Link href="/">{"Jihye's Blog"}</Link>
       </h1>

@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} mx-auto flex min-h-svh w-full max-w-screen-2xl flex-col p-8 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} mx-auto flex min-h-svh w-full max-w-screen-2xl flex-col px-2 py-8 antialiased md:px-8`}
       >
         <Header />
         <main className="flex grow flex-col gap-y-8 p-4">{children}</main>
