@@ -1,5 +1,4 @@
 import path from "path";
-import getCategory, { Category } from "@/lib/category";
 import { readFile } from "fs/promises";
 import { cache } from "react";
 
@@ -22,19 +21,14 @@ export type PostDataProps = PostProps & {
   prevPost: PostProps | null;
 };
 
-export async function getPostsByCategory(categories: Category[]) {
-  const postData = await getAllPostData();
-  if (categories.length === 0) {
-    return postData;
-  }
-  return postData.filter((post) => {
-    const postCategory = getCategory(post.category);
-    return postCategory && categories.includes(postCategory);
-  });
-}
-
 export async function getPostData(postPath: string): Promise<PostDataProps> {
-  const filePath = path.join(process.cwd(), "data", "posts", `${postPath}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "app",
+    "content",
+    `${postPath}.mdx`
+  );
   const content = await readFile(filePath, "utf-8");
 
   const posts = await getAllPostData();
