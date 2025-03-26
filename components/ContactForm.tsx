@@ -50,15 +50,15 @@ export default function ContactForm() {
   return (
     <>
       {banner && (
-        <p className="fixed top-0 m-auto rounded-md bg-yellow-200 p-2">
+        <p className="fixed top-0 mx-auto mt-4 rounded-md bg-yellow-200 p-2 opacity-80">
           {banner.message}
         </p>
       )}
-      <section>
-        <h2 className="text-lg font-semibold text-gray-500">Email 💌</h2>
+      <section className="flex flex-col gap-y-4 text-gray-700 ">
+        <h2 className="text-lg font-semibold">Send Email</h2>
         <form
           onSubmit={onSubmit}
-          className="rounded-md bg-rose-100 p-4 text-blue-950"
+          className="flex flex-col gap-y-2 overflow-hidden rounded-t-md border bg-orange-50 p-4 shadow-sm hover:shadow-md"
         >
           <div className="mb-4 flex w-[50svw] flex-col gap-y-4">
             <div className="flex flex-col">
@@ -71,7 +71,7 @@ export default function ContactForm() {
                 value={form.name}
                 autoComplete="name"
                 maxLength={50}
-                className="flex-1 text-black"
+                className="rounded border pl-2 focus:border-gray-200 focus:outline focus:outline-gray-500 focus:invalid:border-rose-500 focus:invalid:outline-rose-500"
                 onChange={(e) =>
                   setForm((prev) => ({ ...prev, name: e.target.value }))
                 }
@@ -89,7 +89,7 @@ export default function ContactForm() {
                 autoComplete="email"
                 maxLength={80}
                 type="email"
-                className="flex-1 text-black"
+                className="rounded border pl-2 focus:border-gray-200 focus:outline focus:outline-gray-500 focus:invalid:border-rose-500 focus:invalid:outline-rose-500"
                 onChange={onChange}
               />
             </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
                 value={form.subject}
                 required
                 maxLength={80}
-                className="flex-1 text-black"
+                className="rounded border pl-2 focus:border-gray-200 focus:outline focus:outline-gray-500 focus:invalid:border-rose-500 focus:invalid:outline-rose-500"
                 onChange={onChange}
               />
             </div>
@@ -117,13 +117,13 @@ export default function ContactForm() {
                 value={form.message}
                 required
                 rows={5}
-                className="flex-1 text-black"
+                className="rounded border pl-2 focus:border-gray-200 focus:outline focus:outline-gray-500 focus:invalid:border-rose-500 focus:invalid:outline-rose-500"
                 onChange={onChange}
               />
             </div>
           </div>
           <button
-            className="m-auto block rounded bg-rose-500 p-2 font-semibold text-white hover:bg-rose-600"
+            className="m-auto block rounded bg-rose-400 p-2 font-semibold text-white hover:bg-rose-500"
             type="submit"
           >
             Send

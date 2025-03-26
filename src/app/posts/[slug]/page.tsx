@@ -15,7 +15,7 @@ export default async function PostPage({ params }: Props) {
   const { path, nextPost, prevPost } = postData;
 
   return (
-    <section className="mx-auto w-3/4 overflow-hidden">
+    <section className="mx-auto w-3/4 overflow-hidden rounded-t-xl">
       <Image
         className="h-content max-h-[500px] w-full"
         src={`/images/${path}.png`}
