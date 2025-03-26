@@ -1,6 +1,9 @@
-_(Image by Alexander Shatov @Unsplash)_
+<p className="text-xs text-gray-400">(Image by Alexander Shatov @Unsplash)</p>
 
-As developers, we often rely on designers to shape the user interface and experience of our applications. But what happens when there's no designer on the team? This was the challenge my squad faced on a recent project, and Figma became an unexpected hero in our workflow.
+As developers, we often rely on designers to shape the user interface and experience
+of our applications. But what happens when there's no designer on the team? This
+was the challenge my squad faced on a recent project, and Figma became an unexpected
+hero in our workflow.
 
 ## Brainstorming and Collaboration in Figma
 
@@ -22,6 +25,12 @@ One of the best aspects of using Figma in my team was its predefined assets and 
 
 Using Figma also made it easier to standardise UI components across the application. Whether it was buttons, input fields, or modals, I could ensure that styles and spacing remained consistent. This consistency improved the user experience while also making the codebase cleaner—less custom styling meant easier maintenance and fewer inconsistencies creeping in over time.
 
+---
+
 ## Conclusion
 
 While Figma is traditionally seen as a design tool, it proved invaluable in our development workflow. From brainstorming and collaboration to early feedback and UI simplification, it helped us move faster and build a better product. Even without a dedicated designer, we were able to create a clean, user-friendly interface while keeping development efficient. If you're a developer who hasn’t explored Figma yet, I highly recommend giving it a try—you might be surprised by how much it can improve your workflow.
+
+export default ({ children }) => (
+  <article className="flex-col space-y-6 bg-orange-50 p-8">{children}</article>
+);

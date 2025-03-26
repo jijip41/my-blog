@@ -1,0 +1,50 @@
+## **What Did I Do?**
+
+I contributed to both **frontend and backend development**, playing a key role in delivering critical features efficiently.
+
+### Key Contributions:
+
+- **Developed RESTful APIs** to generate **PDFs** from object data, store them in **AWS S3**, and retrieve them when needed.
+- **Created a UI application** to track and manage the **customer contract process**, improving transparency and operational efficiency.
+- **Designed customer-facing UI pages** for **invoice history**, ensuring a seamless and user-friendly experience.
+- **Implemented webhooks** to automate **internal workflows**, increasing productivity and minimizing manual effort.
+
+---
+
+### **Technologies & Experience**
+
+**Node.js & Express**
+
+- Developed **RESTful APIs** to facilitate invoice generation and storage.
+- Ensured stable API performance through efficient request/response handling with **express**.
+- Integrated logging and error-handling mechanisms for improved reliability.
+
+**Puppeteer**
+
+- Automated **PDF generation** using a headless browser.
+- Rendered dynamic HTML templates to create structured and branded PDFs.
+- Enhanced performance for faster and more efficient PDF creation.
+
+**AWS S3 (SDK)**
+
+- Integrated **AWS S3** for seamless invoice storage and retrieval.
+- Utilized **PutObjectCommand** for **uploading PDFs** and **GetObjectCommand** for **on-demand file access**.
+- Configured **S3Client** for optimized file management and performance.
+
+**File System (fs)**
+
+- Used **fs.readFileSync()** and **fs.createWriteStream()** for efficient local file operations before uploading to S3.
+- Implemented **automated file cleanup** to prevent storage bloat and inefficiencies.
+
+**Next.js**
+
+- Built an **invoice history page** leveraging **server-side rendering (SSR)** for improved speed and SEO performance.
+
+**React**
+
+- Developed **modular and reusable UI components** for a scalable frontend architecture.
+- Optimized API performance by utilizing **GraphQL queries** for data retrieval.
+
+export default ({ children }) => (
+  <article className="flex-col space-y-6 bg-orange-50 p-8">{children}</article>
+);

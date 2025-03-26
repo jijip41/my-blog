@@ -1,8 +1,8 @@
-# When to Use Union Types in React Projects
+**When to Use Union Types in React Projects**
 
 In React (or any TypeScript project), **union types** are useful when a variable, prop, or state can have multiple allowed types. Here are some key use cases where you should consider using union types:
 
-## 1. Handling Multiple String or Number Values
+## Handling Multiple String or Number Values
 
 If a prop or function parameter can have a limited set of string or number values, a union type helps enforce type safety.
 
@@ -21,7 +21,7 @@ const Button: React.FC<{ variant: ButtonVariant }> = ({ variant }) => {
 
 ---
 
-## 2. Flexible Component Props
+## Flexible Component Props
 
 When a component can accept different types for a prop.
 
@@ -56,7 +56,7 @@ const Alert: React.FC<AlertProps> = (props) => {
 
 ---
 
-## 3. State with Multiple Possible Shapes
+## State with Multiple Possible Shapes
 
 ```tsx
 type FetchState =
@@ -77,11 +77,11 @@ if (fetchState.status === "success") {
 **When to use?**
 
 - When managing different states in a component (e.g., API calls).
-- Prevents invalid states (e.g., `data` existing in an error state).
+- Prevents invalid states (e.g., **data** existing in an error state).
 
 ---
 
-## 4. Event Handlers with Different Event Types
+## Event Handlers with Different Event Types
 
 ```tsx
 const handleEvent = (event: MouseEvent | KeyboardEvent) => {
@@ -103,4 +103,8 @@ const handleEvent = (event: MouseEvent | KeyboardEvent) => {
 ## When NOT to Use Union Types
 
 - **Too many variations:** If the number of possible combinations is large, consider using a more structured approach like interfaces with optional properties.
-- **Overcomplicating simple types:** If a variable is either `string` or `number` without specific constraints, try to simplify the logic.
+- **Overcomplicating simple types:** If a variable is either **string** or **number** without specific constraints, try to simplify the logic.
+
+export default ({ children }) => (
+  <article className="flex-col space-y-6 bg-orange-50 p-8">{children}</article>
+);
