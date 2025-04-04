@@ -11,12 +11,12 @@ interface Props {
 export default function Posts({ posts }: Props) {
   return (
     <CategoryProvider>
-      <section className="m-auto grid grid-cols-1 gap-2 md:grid-cols-2">
-        <FilteredPosts posts={posts} />
-      </section>
-      <section className="flex-0 flex h-fit flex-col space-y-4 rounded-md border p-4 shadow-md">
+      <div className="flex flex-col gap-y-8">
         <Category />
-      </section>
+        <section className="m-auto grid grid-cols-1 gap-2 md:grid-cols-3">
+          <FilteredPosts posts={posts} />
+        </section>
+      </div>
     </CategoryProvider>
   );
 }

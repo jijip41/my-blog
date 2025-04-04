@@ -13,7 +13,7 @@ export default function Experience() {
       />
       <ExperienceContent
         data={experienceS}
-        company="Software Engineer | Spill, London (Sep 2021 - Dec 2022)"
+        company="Software Engineer | Spill, London (Jan 2021 - Dec 2022)"
       />
     </section>
   );
