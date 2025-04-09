@@ -1,0 +1,165 @@
+<p className="text-xs text-gray-400">(Image by Arnold Francisca @Unsplash)</p>
+
+**Unlocking the Power of Generics in TypeScript**
+
+One of the most powerful features TypeScript offers is Generics. However, as with any feature, it's important to understand how and when to use it. When I was a junior engineer, I didn't fully understand the power of Generics and where to use them. As I gained more experience in building features with TypeScript, I began to see when they become particularly useful.
+
+In this blog post, we'll take a closer look at a common mistake in TypeScript and how Generics can be used to solve it, making your code more reusable, type-safe, and easier to maintain.
+
+---
+
+## A Problematic Function: Over-Specific and Inflexible
+
+Let’s say you need a function that simply checks if an argument is null. At first glance, this function appears to perform a simple check: if the argument is null, it throws an error; otherwise, it returns the argument as a number. However, there’s a significant problem here: it's over-specific. This function is restricted to only working with the 'number' type. What happens if you need to check if a string or a boolean is null? You simply can’t use this function for anything other than numbers.
+
+```
+function isNull(arg: number | null): number {
+  if (arg === null) {
+    throw new Error("not a valid number");
+  }
+  return arg;
+}
+```
+
+The next instinct might be to solve this by using TypeScript’s 'any' type to make the function more flexible. Let’s see how that would look:
+
+```
+function isNull(arg: any): any {
+  if (arg === null) {
+    throw new Error("not valid");
+  }
+  return arg;
+}
+```
+
+---
+
+## Why Using 'any' is Not the Answer
+
+On the surface, using 'any' might seem like a good idea. With 'any', the function can accept any type of argument, making the function more flexible:
+
+```
+const'num = isNull(1); // Works with numbers
+const str = isNull("hello"); // Works with strings
+const bool = isNull(true); // Works with booleans
+```
+
+However, if you use 'any', you will lose all the type safety that TypeScript offers. By using 'any', TypeScript can't infer the type of the argument and, as a result, can no longer provide helpful hints or compile-time checks. This can lead to issues down the road, where you may not know what type the function is returning. So, why would you lose the advantages of using TypeScript in the first place?
+
+The issue here is that 'any' disables TypeScript's ability to help you track types, which can result in potential bugs and a lack of clarity in your codebase.
+
+---
+
+## Making Your Code More Flexible and Type-Safe with Generics
+
+Generics allow you to define functions, classes, and interfaces that work with any type while still retaining type safety. The best part is that Generics preserve the type information, so TypeScript can still infer types and provide accurate tooling support.
+
+Here’s how we can rewrite the isNull' function using Generics:
+
+```
+function isNull<T>(arg: T | null): T {
+  if (arg === null) {
+    throw new Error("not valid");
+  }
+  return arg;
+}
+```
+
+In this version, we use a type parameter 'T', which acts as a placeholder for any type. This allows the function to accept any type while ensuring that the return type is the same as the argument type, if it's not null.
+
+Example usage:
+
+```
+const number = isNull(1); // Type is inferred as 'number'
+const string = isNull("hello"); // Type is inferred as 'string'
+const boolean = isNull(true); // Type is inferred as 'boolean'
+```
+
+Here, the function will now automatically infer the correct type based on the argument passed. The benefit is that it works with any type (not just 'number') but still enforces type safety. This approach makes the function reusable and more flexible.
+
+---
+
+## Why Generics Are So Powerful
+
+Generics are not just for functions – you can also apply them to classes and interfaces to create reusable, type-safe structures.
+
+Consider the following example, where we define a generic class:
+
+```
+interface Either<L, R> {
+  left: () => L;
+  right: () => R;
+}
+
+class SimpleEither<L, R> implements Either<L, R> {
+  constructor(private leftValue: L, private rightValue: R) {}
+
+  left(): L {
+    return this.leftValue;
+  }
+
+  right(): R {
+    return this.rightValue;
+  }
+}
+
+const either = new SimpleEither(4, "hello");
+console.log(either.left()); // 4
+console.log(either.right()); // "hello"
+```
+
+Here, the 'SimpleEither' class takes two types, 'L' and 'R'. The class can hold two different types of values, and the methods 'left()' and 'right()' will return these values with their respective types. This makes it easy to create classes that can work with multiple types while still enforcing type safety.
+
+---
+
+## Adding Constraints with Generics
+
+In some cases, you may want to restrict the types that a generic function or class can accept. You can do this using type constraints.
+
+For example, imagine you have an object with keys that can be accessed dynamically. You can constrain the key type to be a valid key of the given object:
+
+```
+function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const obj = { name: "John", age: 30 };
+const name = getValue(obj, "name"); // Inferred as string
+const age = getValue(obj, "age"); // Inferred as number
+```
+
+In this example, 'K extends keyof T' ensures that the key is always a valid key of the 'obj', ensuring type safety while allowing dynamic access.
+
+---
+
+## Applying Generics with Constraints (Working with '.length')
+
+If you want to constrain your function to work only with types that have a '.length' property (like strings or arrays), you can use 'extends' to create a type constraint:
+
+```typescript
+type Lengthwise = {
+  length: number;
+};
+
+function loggingIdentity<Type extends Lengthwise>(arg: Type): Type {
+  console.log(arg.length);
+  return arg;
+}
+
+loggingIdentity([1, 2, 3]); // Works with arrays
+loggingIdentity("hello"); // Works with strings
+```
+
+Here, the 'Type extends Lengthwise' constraint ensures that 'Type' must have a '.length' property, allowing you to safely use the 'length' property in the function.
+
+---
+
+## Conclusion: Embrace the Power of TypeScript Generics
+
+Generics are one of TypeScript’s most powerful features, enabling you to write flexible, reusable, and type-safe code. In this post, I explained how a simple function could be refactored to use generics instead of the 'any' type, preserving type safety and allowing it to work with multiple types. We also explored how generics can be applied in classes, interfaces, and even when working with constraints, making your TypeScript code more expressive and maintainable.
+
+When I work, using Generics unlocks the full potential of TypeScript's type system, ensuring that my code is both flexible and type-safe. So, next time you need to write reusable code, consider using generics to create more robust solutions.
+
+export default ({ children }) => (
+  <article className="flex-col space-y-6 bg-orange-50 p-8">{children}</article>
+);

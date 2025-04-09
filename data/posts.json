@@ -54,5 +54,13 @@
     "category": "review",
     "path": "review-2023",
     "featured": false
+  },
+  {
+    "title": "Mastering TypeScript Generics",
+    "description": "Enhancing Flexibility and Type Safety",
+    "date": "2025-04-09",
+    "category": "typeScript",
+    "path": "typescript-generics",
+    "featured": true
   }
 ]
